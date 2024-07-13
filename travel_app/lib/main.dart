@@ -4,6 +4,7 @@ import 'package:travel_app/pages/Onboarding.dart';
 import 'package:travel_app/pages/signIn.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:travel_app/pages/signUp.dart';
 
 void main() {
   runApp(
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SingIn(),
+      home: SingUp(),
     );
   }
 }

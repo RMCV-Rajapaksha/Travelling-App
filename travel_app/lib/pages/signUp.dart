@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/components/Input.dart';
+import 'package:travel_app/components/button.dart';
 
 import 'package:travel_app/components/theme.dart';
 
-class SingUP extends StatefulWidget {
-  const SingUP({super.key});
+class SingUp extends StatefulWidget {
+  const SingUp({super.key});
 
   @override
-  State<SingUP> createState() => _QrGeneratorState();
+  State<SingUp> createState() => _SingUpState();
 }
 
-class _QrGeneratorState extends State<SingUP> {
+class _SingUpState extends State<SingUp> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -23,21 +28,40 @@ class _QrGeneratorState extends State<SingUP> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: screenHeight * 0.04),
+            SizedBox(height: screenHeight * 0.2),
             const Text(
-              "QR Generator",
+              "Sing up now",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: screenHeight * 0.02),
+            SizedBox(height: screenHeight * 0.003),
             const Text(
-              "Enter the text you want to convert to QR code",
+              "Please fill the details to continue our app",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            SizedBox(height: screenHeight * 0.04),
+            CustomInputField(
+                hintText: "Full Name", controller: _nameController),
+            SizedBox(height: screenHeight * 0.04),
+            CustomInputField(hintText: "Email", controller: _emailController),
+            SizedBox(height: screenHeight * 0.04),
+            CustomInputField(
+                hintText: "Password", controller: _passwordController),
+            SizedBox(height: screenHeight * 0.02),
+            const Text("Password must be at least 8 characters"),
+            SizedBox(height: screenHeight * 0.02),
+            CustomButton(
+              height: screenHeight * 0.08,
+              width: screenWidth * 1,
+              text: "Sing in",
+              onPressed: () {
+                print("Sing up");
+              },
             ),
           ],
         ),

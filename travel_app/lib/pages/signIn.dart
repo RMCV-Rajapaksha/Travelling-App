@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/Input.dart';
+import 'package:travel_app/components/button.dart';
 
 import 'package:travel_app/components/theme.dart';
 
@@ -26,7 +27,7 @@ class _SingInState extends State<SingIn> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: screenHeight * 0.04),
+            SizedBox(height: screenHeight * 0.2),
             const Text(
               "Sing in now",
               style: TextStyle(
@@ -42,17 +43,21 @@ class _SingInState extends State<SingIn> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: screenHeight * 0.08),
+            SizedBox(height: screenHeight * 0.04),
             CustomInputField(hintText: "Email", controller: _emailController),
             SizedBox(height: screenHeight * 0.04),
             CustomInputField(
                 hintText: "Password", controller: _passwordController),
-            const Text(
-              "Enter the text you want to convert to QR code",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+            SizedBox(height: screenHeight * 0.02),
+            TextButton(onPressed: () => {}, child: Text("Forgot password?")),
+            SizedBox(height: screenHeight * 0.02),
+            CustomButton(
+              height: screenHeight * 0.08,
+              width: screenWidth * 1,
+              text: "Sing in",
+              onPressed: () {
+                print("Sing in");
+              },
             ),
           ],
         ),
