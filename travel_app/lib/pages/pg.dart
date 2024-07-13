@@ -11,12 +11,6 @@ class QrGenerator extends StatefulWidget {
 }
 
 class _QrGeneratorState extends State<QrGenerator> {
-  TextEditingController urlController = TextEditingController(text: '');
-  String data = '';
-  final GlobalKey _qrkey = GlobalKey();
-  bool dirExists = false;
-  dynamic externalDir = '/storage/emulated/0/Download/Qr_code';
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -46,20 +40,6 @@ class _QrGeneratorState extends State<QrGenerator> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: screenHeight * 0.02),
-            TextField(
-              controller: urlController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter text',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  data = value;
-                });
-              },
-            ),
-            SizedBox(height: screenHeight * 0.04),
           ],
         ),
       ),
