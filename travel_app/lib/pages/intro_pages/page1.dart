@@ -24,18 +24,7 @@ class Intro_page1 extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/logos/SyncUp_logo.png',
-                        width: screenWidth * 0.2,
-                      ),
-                      const Text(
-                        "SyncUp",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 48,
-                        ),
-                      ),
-                      Image.asset(
-                        'assets/images/intro1.png',
+                        'assets/images/intro_1.png',
                         width: screenWidth * 0.8,
                         height: screenHeight * 0.3,
                         fit: BoxFit.fill,
