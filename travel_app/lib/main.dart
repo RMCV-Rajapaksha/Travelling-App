@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/navigationBar.dart';
-import 'package:travel_app/pages/pg.dart';
+import 'package:travel_app/pages/signIn.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 
