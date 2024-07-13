@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'package:travel_app/components/theme.dart';
 
-class QrGenerator extends StatefulWidget {
-  const QrGenerator({super.key});
+class SingIn extends StatefulWidget {
+  const SingIn({super.key});
 
   @override
-  State<QrGenerator> createState() => _QrGeneratorState();
+  State<SingIn> createState() => _QrGeneratorState();
 }
 
-class _QrGeneratorState extends State<QrGenerator> {
+class _QrGeneratorState extends State<SingIn> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
