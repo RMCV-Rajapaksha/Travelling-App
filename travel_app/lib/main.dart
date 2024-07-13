@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/components/side_menu.dart';
+import 'package:travel_app/components/navigationBar.dart';
 import 'package:travel_app/pages/pg.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +16,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
