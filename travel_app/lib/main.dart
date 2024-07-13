@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/side_menu.dart';
+import 'package:travel_app/pages/pg.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SideMenu(),
+      home: QrGenerator(),
     );
   }
 }
