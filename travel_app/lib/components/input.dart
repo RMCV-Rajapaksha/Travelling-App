@@ -20,22 +20,26 @@ class CustomInputField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: Color.fromRGBO(53, 131, 169, 1),
+          color: Color.fromRGBO(202, 86, 209, 1),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white, width: 2.0),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 79, 48, 95), width: 2.0),
           borderRadius: BorderRadius.circular(15.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white, width: 2.0),
+          borderSide: const BorderSide(
+              color: Color.fromRGBO(202, 86, 209, 1), width: 2.0),
           borderRadius: BorderRadius.circular(15.0),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white, width: 2.0),
+          borderSide: const BorderSide(
+              color: Color.fromRGBO(202, 86, 209, 1), width: 2.0),
           borderRadius: BorderRadius.circular(15.0),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white, width: 2.0),
+          borderSide: const BorderSide(
+              color: Color.fromRGBO(202, 86, 209, 1), width: 2.0),
           borderRadius: BorderRadius.circular(15.0),
         ),
         fillColor: const Color.fromRGBO(255, 255, 255, 0.3),

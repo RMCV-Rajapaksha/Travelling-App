@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/components/Input.dart';
 
 import 'package:travel_app/components/theme.dart';
 
@@ -6,10 +7,12 @@ class SingIn extends StatefulWidget {
   const SingIn({super.key});
 
   @override
-  State<SingIn> createState() => _QrGeneratorState();
+  State<SingIn> createState() => _SingInState();
 }
 
-class _QrGeneratorState extends State<SingIn> {
+class _SingInState extends State<SingIn> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -25,13 +28,25 @@ class _QrGeneratorState extends State<SingIn> {
           children: [
             SizedBox(height: screenHeight * 0.04),
             const Text(
-              "QR Generator",
+              "Sing in now",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: screenHeight * 0.02),
+            SizedBox(height: screenHeight * 0.003),
+            const Text(
+              "Please sing in to continue our app",
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.08),
+            CustomInputField(hintText: "Email", controller: _emailController),
+            SizedBox(height: screenHeight * 0.04),
+            CustomInputField(
+                hintText: "Password", controller: _passwordController),
             const Text(
               "Enter the text you want to convert to QR code",
               style: TextStyle(
