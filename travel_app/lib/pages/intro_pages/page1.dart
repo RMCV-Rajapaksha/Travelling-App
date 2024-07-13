@@ -11,44 +11,46 @@ class Intro_page1 extends StatelessWidget {
     return Template(
         screenWidth: screenWidth,
         screenHeight: screenHeight,
-        theChild: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment
-                  .start, // Align children to the start (left) of the column
-              children: [
-                SizedBox(height: screenHeight * 0.1),
-                Center(
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/intro_1.png',
-                        width: screenWidth * 0.8,
-                        height: screenHeight * 0.3,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
+        theChild: Column(
+          crossAxisAlignment: CrossAxisAlignment
+              .start, // Align children to the start (left) of the column
+          children: [
+            Center(
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/intro_1.png',
+                    width: screenWidth,
+                    height: screenHeight * 0.5,
+                    fit: BoxFit.fill,
                   ),
-                ),
-                const Text(
-                  "Capture and Share Your Journey, Together.",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
-                  ),
-                ),
-                const Text(
-                  "Explore a live gallery of journeys and events, shared by loved ones",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 17,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
+            SizedBox(height: screenHeight * 0.01),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "Life is short and the world is wide",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 26,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 17,
+                ),
+              ),
+            ),
+          ],
         ));
   }
 }
