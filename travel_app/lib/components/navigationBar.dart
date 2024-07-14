@@ -1,56 +1,112 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class SideMenu extends StatefulWidget {
-  const SideMenu({super.key});
+class BottomNavBarFb3 extends StatelessWidget {
+  const BottomNavBarFb3({Key? key}) : super(key: key);
 
-  @override
-  State<SideMenu> createState() => _SideMenuState();
-}
-
-class _SideMenuState extends State<SideMenu> {
-  int _currentIndex = 0; // Track the selected index
-
-  final List<Widget> _pages = [
-    const Icon(Icons.home, size: 30),
-    const Icon(Icons.search, size: 30),
-    const Icon(Icons.favorite, size: 30),
-    const Icon(Icons.settings, size: 30),
-    // Add your pages here
-  ];
-
-  final List<Widget> _contentPages = [
-    Center(child: Text('Home Page')),
-    Center(child: Text('Search Page')),
-    Center(child: Text('Favorites Page')),
-    Center(child: Text('Settings Page')),
-    // Add your actual page content here
-  ];
-
-  final List<Color> _bgColors = [
-    const Color.fromARGB(255, 45, 18, 93),
-    Colors.deepPurple,
-    const Color.fromARGB(255, 174, 170, 180),
-    const Color.fromARGB(255, 58, 183, 62),
-    // Add your colors here
-  ];
+  final primaryColor = const Color(0xff4338CA);
+  final secondaryColor = const Color(0xff6D28D9);
+  final accentColor = const Color(0xffffffff);
+  final backgroundColor = const Color(0xffffffff);
+  final errorColor = const Color(0xffEF4444);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: _bgColors[_currentIndex],
-        child: _contentPages[_currentIndex], // Display the current page content
+    return BottomAppBar(
+      color: Color.fromARGB(255, 255, 255, 255),
+      child: SizedBox(
+        height: 56,
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconBottomBar2(
+                  text: "Home",
+                  icon: Icons.home,
+                  selected: true,
+                  onPressed: () {}),
+              Spacer(),
+              IconBottomBar(
+                  text: "Search",
+                  icon: Icons.search_outlined,
+                  selected: false,
+                  onPressed: () {}),
+              IconBottomBar(
+                  text: "Cart",
+                  icon: Icons.local_grocery_store_outlined,
+                  selected: false,
+                  onPressed: () {}),
+              IconBottomBar(
+                  text: "Calendar",
+                  icon: Icons.date_range_outlined,
+                  selected: false,
+                  onPressed: () {})
+            ],
+          ),
+        ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: _bgColors[_currentIndex],
-        items: _pages,
-        animationDuration: Duration(milliseconds: 200),
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index; // Update the current index
-          });
-        },
+    );
+  }
+}
+
+class IconBottomBar extends StatelessWidget {
+  const IconBottomBar(
+      {Key? key,
+      required this.text,
+      required this.icon,
+      required this.selected,
+      required this.onPressed})
+      : super(key: key);
+  final String text;
+  final IconData icon;
+  final bool selected;
+  final Function() onPressed;
+
+  final primaryColor = const Color.fromARGB(255, 79, 48, 95);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: onPressed,
+          icon: Icon(
+            icon,
+            size: 25,
+            color: selected ? primaryColor : Colors.black54,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class IconBottomBar2 extends StatelessWidget {
+  const IconBottomBar2(
+      {Key? key,
+      required this.text,
+      required this.icon,
+      required this.selected,
+      required this.onPressed})
+      : super(key: key);
+  final String text;
+  final IconData icon;
+  final bool selected;
+  final Function() onPressed;
+  final primaryColor = const Color.fromARGB(255, 79, 48, 95);
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: primaryColor,
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          size: 25,
+          color: Colors.white,
+        ),
       ),
     );
   }
