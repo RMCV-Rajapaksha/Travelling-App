@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/navigationBar.dart';
 import 'package:travel_app/pages/Onboarding.dart';
+import 'package:travel_app/pages/cart.dart';
 import 'package:travel_app/pages/home.dart';
 import 'package:travel_app/pages/signIn.dart';
 import 'package:device_preview/device_preview.dart';

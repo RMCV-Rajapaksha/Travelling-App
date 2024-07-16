@@ -40,6 +40,8 @@ dependencies:
   device_preview: ^1.2.0
   smooth_page_indicator: ^1.2.0
   flutter_rating_bar: ^4.0.1
+  get: ^4.6.6
+  flutter_speed_dial: ^7.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +69,6 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/video/
     - assets/logos/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

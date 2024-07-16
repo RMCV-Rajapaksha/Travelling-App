@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/components/card.dart';
 import 'package:travel_app/components/input.dart';
 import 'package:travel_app/components/navigationBar.dart';
-
 import 'package:travel_app/components/theme.dart';
 
 class Home extends StatefulWidget {
@@ -14,15 +13,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final TextEditingController _search = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
+      floatingActionButton: CustomNavBar(),
       body: Template(
         screenWidth: screenWidth,
-        screenHeight: screenHeight * 0.8649,
+        screenHeight: screenHeight,
         theChild: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -31,12 +33,14 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: screenHeight * 0.04,
               ),
-              const Text("Explore the beauty of the world",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  )),
+              const Text(
+                "Explore the beauty of the world",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               SizedBox(
                 height: screenHeight * 0.01,
               ),
@@ -44,10 +48,10 @@ class _HomeState extends State<Home> {
               Expanded(
                 child: GridView.builder(
                   itemCount: 1000,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 10,
+                    crossAxisSpacing: screenWidth * 0.03,
+                    mainAxisSpacing: screenHeight * 0.05,
                     childAspectRatio: 1,
                   ),
                   itemBuilder: (context, index) {
@@ -59,7 +63,6 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBarFb3(),
     );
   }
 }
