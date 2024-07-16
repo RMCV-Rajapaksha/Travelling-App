@@ -62,7 +62,7 @@ class _StartState extends State<Start> with SingleTickerProviderStateMixin {
                       );
                     },
                     child: Image.asset(
-                      'assets/images/intro_1.png',
+                      'assets/images/landmarks.png',
                       width: 400,
                       height: 400,
                     ),

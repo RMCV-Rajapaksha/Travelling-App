@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/components/navigationBar.dart';
 import 'package:travel_app/pages/Onboarding.dart';
 import 'package:travel_app/pages/cart.dart';
+import 'package:travel_app/pages/first.dart';
 import 'package:travel_app/pages/home.dart';
 import 'package:travel_app/pages/map.dart';
 import 'package:travel_app/pages/profile.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Profile(),
+      home: Start(),
     );
   }
 }
