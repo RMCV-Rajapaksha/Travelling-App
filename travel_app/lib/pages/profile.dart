@@ -20,7 +20,7 @@ class _ProfileState extends State<Profile> {
         theChild: Padding(
           padding: const EdgeInsets.all(30),
           child: Container(
-            color: Color.fromARGB(0, 255, 255, 255),
+            color: const Color.fromARGB(0, 255, 255, 255),
             child: Column(
               children: [
                 const SizedBox(
@@ -99,60 +99,58 @@ class _ProfileState extends State<Profile> {
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  child: Expanded(
-                      child: ListView(
-                    children: [
-                      Card(
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        color: Colors.white70,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.privacy_tip_sharp,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'Privacy',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.black54,
-                          ),
+                Expanded(
+                    child: ListView(
+                  children: [
+                    Card(
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      color: Colors.white70,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.privacy_tip_sharp,
+                          color: Colors.black54,
+                        ),
+                        title: Text(
+                          'Privacy',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.logout,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'Logout',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(Icons.arrow_forward_ios_outlined),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.logout,
+                          color: Colors.black54,
                         ),
-                      )
-                    ],
-                  )),
-                )
+                        title: Text(
+                          'Logout',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios_outlined),
+                      ),
+                    )
+                  ],
+                ))
               ],
             ),
           ),
