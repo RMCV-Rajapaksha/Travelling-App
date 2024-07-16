@@ -30,6 +30,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+              <meta-data android:name="com.google.android.geo.AIzaSyCjn8MPpR34d8u3zx_K4VTuQh8OAlHj3FU
+               android:value="AIzaSyCjn8MPpR34d8u3zx_K4VTuQh8OAlHj3FU"/>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
