@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter/animation.dart';
+import 'package:travel_app/components/button.dart';
 import 'package:travel_app/components/theme.dart';
 
 class Start extends StatefulWidget {
@@ -78,80 +79,20 @@ class _StartState extends State<Start> with SingleTickerProviderStateMixin {
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Container(
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.95,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(80, 23, 148, 1),
-                          Color.fromRGBO(60, 112, 161, 1),
-                        ],
-                      ),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        // Get.to(
-                        //   () => const AdminLogin(),
-                        //   transition: Transition
-                        //       .leftToRight, // Add this line for the transition animation
-                        //   duration: Duration(
-                        //       milliseconds:
-                        //           600), // Optional: specify the duration of the animation
-                        // );
-                      },
-                      child: const Text(
-                        'As a Admin',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                        ),
-                      ),
-                    ),
+                  CustomButton(
+                    height: screenHeight * 0.08,
+                    width: screenWidth * 1,
+                    text: "As a Admin",
+                    onPressed: () {},
                   ),
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Container(
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.95,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(80, 23, 148, 1),
-                          Color.fromRGBO(60, 112, 161, 1),
-                        ],
-                      ),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        // Get.to(
-                        //   () => const StuLogin(),
-                        //   transition: Transition
-                        //       .leftToRight, // Add this line for the transition animation
-                        //   duration: Duration(milliseconds: 600),
-                        // );
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => StuLogin()),
-                        // );
-                      },
-                      child: const Text(
-                        'As a Student',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                        ),
-                      ),
-                    ),
+                  CustomButton(
+                    height: screenHeight * 0.08,
+                    width: screenWidth * 1,
+                    text: "As a User",
+                    onPressed: () {},
                   ),
                 ],
               ),
