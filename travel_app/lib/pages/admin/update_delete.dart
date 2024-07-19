@@ -4,14 +4,14 @@ import 'package:travel_app/components/card.dart';
 import 'package:travel_app/components/input.dart';
 import 'package:travel_app/components/theme.dart';
 
-class AdminMain extends StatefulWidget {
-  const AdminMain({super.key});
+class UpdateMain extends StatefulWidget {
+  const UpdateMain({super.key});
 
   @override
-  State<AdminMain> createState() => _AdminMainState();
+  State<UpdateMain> createState() => _UpdateMainState();
 }
 
-class _AdminMainState extends State<AdminMain> {
+class _UpdateMainState extends State<UpdateMain> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   @override

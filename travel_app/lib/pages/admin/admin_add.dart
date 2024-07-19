@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/button.dart';
-import 'package:travel_app/components/card.dart';
 import 'package:travel_app/components/input.dart';
 import 'package:travel_app/components/theme.dart';
 
@@ -26,26 +25,31 @@ class _AdminMainState extends State<AdminMain> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: screenHeight * 0.2),
             const Text(
-              "Added Places",
+              "Add new place",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Expanded(
-              child: GridView.builder(
-                itemCount: 1000,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: screenWidth * 0.03,
-                  mainAxisSpacing: screenHeight * 0.05,
-                  childAspectRatio: 1,
-                ),
-                itemBuilder: (context, index) {
-                  return TourismCard();
-                },
-              ),
+            SizedBox(height: screenHeight * 0.04),
+            CustomInputField(
+                hintText: "Place Name", controller: _emailController),
+            SizedBox(height: screenHeight * 0.02),
+            CustomInputField(
+                hintText: "Description", controller: _passwordController),
+            SizedBox(height: screenHeight * 0.02),
+            CustomInputField(
+                hintText: "Price", controller: _passwordController),
+            SizedBox(height: screenHeight * 0.02),
+            CustomButton(
+              height: screenHeight * 0.08,
+              width: screenWidth * 1,
+              text: "Add Data",
+              onPressed: () {
+                print("Sing in");
+              },
             ),
           ],
         ),

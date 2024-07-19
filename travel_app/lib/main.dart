@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/components/navigationBar.dart';
 import 'package:travel_app/pages/Onboarding.dart';
-import 'package:travel_app/pages/admin/admin_main.dart';
+import 'package:travel_app/pages/admin/admin_add.dart';
 import 'package:travel_app/pages/cart.dart';
 import 'package:travel_app/pages/first.dart';
 import 'package:travel_app/pages/home.dart';
