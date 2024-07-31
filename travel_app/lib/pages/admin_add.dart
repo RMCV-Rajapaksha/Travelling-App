@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:travel_app/components/button.dart';
 import 'package:travel_app/components/input.dart';
 import 'package:travel_app/components/theme.dart';
@@ -49,16 +50,8 @@ class _AdminMainState extends State<AdminMain> {
               height: screenHeight * 0.08,
               width: screenWidth * 1,
               text: "Add Data",
-              onPressed: () {
-                var db = FirebaseFirestore.instance;
-                final placeData = <String, dynamic>{
-                  "name": _placeNameController.text,
-                  "description": _descriptionController.text,
-                  "price": _priceController.text
-                };
-                db.collection("places").add(placeData).then(
-                    (DocumentReference doc) =>
-                        print('DocumentSnapshot added with ID: ${doc.id}'));
+              onPressed: () async {
+                var status = await Permission.camera.status;
               },
             ),
           ],
