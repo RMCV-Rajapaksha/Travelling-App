@@ -1,32 +1,47 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseConnection {
-  // Existing code for adding an event
-  Future<void> addEvent(String eventId, String userId, String eventType,
-      String eventName, String description, String url) async {
-    final event = <String, String>{
-      "eventId": eventId,
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  // Add a place to the Firestore database
+  Future<void> addPlace(
+      String userId, String place, String description, String url) async {
+    final placeData = {
       "userId": userId,
-      "eventType": eventType,
-      "date": DateTime.now().toString(),
-      "eventName": eventName,
+      "place": place,
       "description": description,
-      "URL": url
+      "URL": url,
+      "price": "N/A" // Replace with actual price if available
     };
-    var db = FirebaseFirestore.instance;
+
     try {
-      await db.collection("events").doc(eventId).set(event);
+      await _db.collection("places").add(placeData);
     } catch (e) {
       print(e);
     }
   }
 
-  // Method to delete an event
-  Future<void> deleteEvent(String eventId) async {
-    var db = FirebaseFirestore.instance;
+  // Update an existing place in the Firestore database
+  Future<void> updatePlace(
+      String documentId, String place, String description, String url) async {
+    final placeData = {
+      "place": place,
+      "description": description,
+      "URL": url,
+      "price": "N/A" // Replace with actual price if available
+    };
+
     try {
-      await db.collection("events").doc(eventId).delete();
-      print("Event deleted successfully");
+      await _db.collection("places").doc(documentId).update(placeData);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  // Delete a place from the Firestore database
+  Future<void> deletePlace(String documentId) async {
+    try {
+      await _db.collection("places").doc(documentId).delete();
     } catch (e) {
       print(e);
     }
